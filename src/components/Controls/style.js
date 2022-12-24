@@ -48,3 +48,9 @@ export const SelectedButton = styled(Button)`
   background-color: #000;
   color: #fff;
 `;
+
+export const Checkbox = styled.input`
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+`;

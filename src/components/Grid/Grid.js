@@ -1,21 +1,45 @@
 import React, { useEffect, useState } from 'react';
+import { findPathWithoutDiagonal, findPath } from '../../services/pathfinder/Pathfinder';
 import Node from '../Node/Node';
 import { GridWrapper } from './style';
 
-export default function Grid({ size, mode, setMode, reset }) {
+export default function Grid({ size, mode, setMode, reset, delay, showLabels, diagonal }) {
   const [gridData, setGridData] = useState([]);
 
   useEffect(() => {
     // set initial grid
-    const initialGrid = new Array(size).fill(0).map(() => new Array(size).fill(0).map(() => ({
+    const initialGrid = new Array(size).fill(0).map((value, rowIndex) => new Array(size).fill(0).map((v, colIndex) => ({
       gCost: 0,
       hCost: 0,
       fCost: 0,
+      index: [rowIndex, colIndex],
       state: 'open',
     })));
 
     setGridData(initialGrid);
   }, [size, reset]);
+
+  useEffect(() => {
+    if (mode === 'running') {
+      const runPathFinder = async () => {
+        if (diagonal) {
+          await findPath({
+            delay,
+            gridData,
+            setGridData,
+          });
+        } else {
+          await findPathWithoutDiagonal({
+            delay,
+            gridData,
+            setGridData,
+          });
+        }
+      };
+
+      runPathFinder();
+    }
+  }, [mode]);
 
   const resetState = state => {
     for (const row of gridData) {
@@ -65,6 +89,7 @@ export default function Grid({ size, mode, setMode, reset }) {
               clickAction={clickAction}
               size={gridData.length}
               index={[rowIndex, nodeIndex]}
+              showLabels={showLabels}
               {...node}
             />
           ))}

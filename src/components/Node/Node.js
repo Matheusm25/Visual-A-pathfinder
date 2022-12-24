@@ -9,23 +9,28 @@ export default function Node({
   size,
   clickAction,
   index,
+  showLabels,
 }) {
   const colors = {
     'open': '#fff',
     'closed': '#e04a24',
     'start': '#03fc84',
+    'option': '#03fc84',
     'end': '#03dbfc',
     'wall': '#000',
     'path': '#03dbfc',
+    'tested': '#91a6c7',
   };
 
   const lettersColors = {
     'open': '#000',
     'closed': '#fff',
     'start': '#000',
+    'option': '#000',
     'end': '#000',
     'wall': '#fff',
     'path': '#000',
+    'tested': '#000',
   }
 
   return (
@@ -38,11 +43,15 @@ export default function Node({
       }}
       onClick={() => clickAction(...index)}
     >
-      <CostInfo>
-        <LeftInfo>{gCost}</LeftInfo>
-        <RigthInfo>{hCost}</RigthInfo>
-      </CostInfo>
-      <CenterInfo>{fCost}</CenterInfo>
+      {showLabels === true ? (
+        <>
+          <CostInfo>
+            <LeftInfo>{gCost}</LeftInfo>
+            <RigthInfo>{hCost}</RigthInfo>
+          </CostInfo>
+          <CenterInfo>{fCost}</CenterInfo>
+        </>
+      ) : (<></>)}
     </NodeWrapper>
   );
 }
