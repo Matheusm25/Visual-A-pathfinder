@@ -8,7 +8,7 @@ export default function Game() {
   const [mode, setMode] = useState('placeStart');
   const [reset, setReset] = useState(false);
   const [showLabels, setShowLabels] = useState(true);
-  const [diagonal, setDiagonal] = useState(true);
+  const [diagonal, setDiagonal] = useState(false);
 
 
   return (
