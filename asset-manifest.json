@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.js": "/Visual-A-pathfinder/static/js/main.87beb80a.chunk.js",
+    "main.js.map": "/Visual-A-pathfinder/static/js/main.87beb80a.chunk.js.map",
+    "runtime-main.js": "/Visual-A-pathfinder/static/js/runtime-main.f6de01d8.js",
+    "runtime-main.js.map": "/Visual-A-pathfinder/static/js/runtime-main.f6de01d8.js.map",
+    "static/js/2.28cdef34.chunk.js": "/Visual-A-pathfinder/static/js/2.28cdef34.chunk.js",
+    "static/js/2.28cdef34.chunk.js.map": "/Visual-A-pathfinder/static/js/2.28cdef34.chunk.js.map",
+    "index.html": "/Visual-A-pathfinder/index.html",
+    "precache-manifest.37028c9758234016ac661f4445096dea.js": "/Visual-A-pathfinder/precache-manifest.37028c9758234016ac661f4445096dea.js",
+    "service-worker.js": "/Visual-A-pathfinder/service-worker.js",
+    "static/js/2.28cdef34.chunk.js.LICENSE.txt": "/Visual-A-pathfinder/static/js/2.28cdef34.chunk.js.LICENSE.txt",
+    "static/js/main.87beb80a.chunk.js.LICENSE.txt": "/Visual-A-pathfinder/static/js/main.87beb80a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f6de01d8.js",
+    "static/js/2.28cdef34.chunk.js",
+    "static/js/main.87beb80a.chunk.js"
+  ]
+}
